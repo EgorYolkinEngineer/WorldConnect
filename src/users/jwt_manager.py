@@ -12,7 +12,7 @@ def create_payload(payload: dict, token_type: str) -> dict:
 
 
 def create_jwt(payload: dict, token_type: str) -> bytes:
-    return jwt.encode(create_payload(payload, token_type), SECRET_KEY, algorithm=JWT.get('ALGORITHMS')[0])
+    return jwt.encode(create_payload(payload, token_type), SECRET_KEY, algorithm=JWT.get("ALGORITHMS")[0])
 
 
 def decode_jwt(encode_jwt: str) -> dict:

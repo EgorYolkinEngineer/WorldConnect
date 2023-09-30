@@ -11,10 +11,10 @@ async def validate_authorization(authorization: str = Header()):
     if authorization is None or not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail=exceptions.invalid_auth)
     try:
-        payload = jwt.decode(authorization.split('Bearer ')[1], SECRET_KEY,
+        payload = jwt.decode(authorization.split("Bearer ")[1], SECRET_KEY,
                              algorithms=JWT.get('ALGORITHMS'))
 
-        user = session.query(User).filter_by(id=payload.get('user_id')).first()
+        user = session.query(User).filter_by(id=payload.get("user_id")).first()
 
         if not user:
             raise jwt.PyJWTError

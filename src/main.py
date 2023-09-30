@@ -1,9 +1,12 @@
 from fastapi import FastAPI
-from users.router import router as users_router
 from redis import asyncio as aioredis
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
-import database
+
+from users.router import router as users_router
+from messages.router import router as messages_router
+from messages.websockets import router as ws_messages_router
+import messages.models
 
 app = FastAPI(version='1.0',
               title='WorldConnect')
@@ -15,5 +18,6 @@ async def startup():
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
 
 
-# app.include_router(websockets.router, tags=['ws'])
+app.include_router(ws_messages_router, prefix='/ws', tags=['ws'])
+app.include_router(messages_router, prefix='/messages', tags=['rest'])
 app.include_router(users_router, prefix='/users', tags=['rest'])

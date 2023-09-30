@@ -7,16 +7,16 @@ from users import models
 router = APIRouter()
 
 
-@router.get('/auth/register/')
+@router.post("/auth/register/")
 async def auth_register(auth_data: schemas.AuthData):
     return service.create_user(auth_data)
 
 
-@router.get('/auth/login/')
+@router.post("/auth/login/")
 async def auth_login(auth_data: schemas.AuthData):
     return service.login_user(auth_data)
 
 
-@router.get('/me/')
+@router.get("/me/")
 async def me(user: models.User = Depends(depends.validate_authorization)):
-    return user.to_dict(exclude=['hashed_password'])
+    return user.to_dict(exclude=["hashed_password"])
