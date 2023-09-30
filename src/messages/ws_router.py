@@ -1,4 +1,5 @@
-from fastapi import APIRouter, WebSocket, Depends
+from fastapi import APIRouter, Depends
+from messages import ws_manager
 from users import models as users_models
 from users import depends as users_depends
 from messages import schemas
@@ -6,24 +7,7 @@ from messages import service
 
 router = APIRouter()
 
-
-class ConnectionManager:
-    def __init__(self):
-        self.active_connections: list[WebSocket] = []
-
-    async def connect(self, websocket: WebSocket):
-        await websocket.accept()
-        self.active_connections.append(websocket)
-
-    def disconnect(self, websocket: WebSocket):
-        self.active_connections.remove(websocket)
-
-    async def broadcast(self, message: str):
-        for connection in self.active_connections:
-            await connection.send_text(message)
-
-
-manager = ConnectionManager()
+manager = ws_manager.ConnectionManager()
 
 
 @router.websocket("/chat/")

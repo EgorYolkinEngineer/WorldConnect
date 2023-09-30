@@ -5,7 +5,7 @@ from fastapi_cache.backends.redis import RedisBackend
 
 from users.router import router as users_router
 from messages.router import router as messages_router
-from messages.websockets import router as ws_messages_router
+from messages.ws_router import router as ws_messages_router
 import messages.models
 
 app = FastAPI(version='1.0',
