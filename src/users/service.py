@@ -21,7 +21,7 @@ def create_user(auth_data: schemas.AuthData):
         return jwt_manager.create_jwt_pair(user_id)
     except sqlalchemy.exc.IntegrityError:
         session.rollback()
-        return HTTPException(
+        raise HTTPException(
             status_code=400,
             detail=exceptions.user_already_exists
         )
@@ -33,12 +33,12 @@ def login_user(auth_data: schemas.AuthData):
         if utils.password_verification(auth_data.password, user.hashed_password):
             return jwt_manager.create_jwt_pair(user.id)
         else:
-            return HTTPException(
+            raise HTTPException(
                 status_code=400,
                 detail=exceptions.auth_data_is_not_valid
             )
     else:
-        return HTTPException(
+        raise HTTPException(
             status_code=400,
             detail=exceptions.user_not_found
         )

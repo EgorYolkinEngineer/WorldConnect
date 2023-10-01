@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WorldConnect Auth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="container"
+     style="padding: 50px; display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div class="row" style="display: none;" id="registrationForm">
+        <div class="col-xs">
+            <img src="/static/images/chat.jpg" alt="">
+        </div>
+        <div class="col-sm col-xs">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+                <div>
+                    <b>World</b>
+                    <svg style="margin: 0 10px 0 10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="currentColor"
+                         class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                        <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                    </svg>
+                    <b>Connect</b>
+                </div>
+                <br>
+                <div>
+                    <p>Registration</p>
+                </div>
+            </div>
+            <label for="inputUsername" class="form-label">Username</label>
+            <input type="text" min="5" id="inputUsername" class="form-control" aria-describedby="passwordHelpBlock">
+            <div id="usernameHelpBlock" class="form-text">
+                5-15 characters long, contain letters and numbers.
+            </div>
+            <br>
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock">
+            <div id="passwordHelpBlock" class="form-text">
+                8-20 characters long.
+            </div>
+            <br>
+            <button onclick="register();" type="button" class="btn btn-dark">Start communication!</button>
+            <br><br>
+            <a href="#" onclick="hiddenRegistrationForm();">Login</a>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+    <div class="row" id="loginForm">
+        <div class="col-xs">
+            <img src="/static/images/chat.jpg" alt="">
+        </div>
+        <div class="col-sm col-xs">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+                <div>
+                    <b>World</b>
+                    <svg style="margin: 0 10px 0 10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="currentColor"
+                         class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                        <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                    </svg>
+                    <b>Connect</b>
+                </div>
+                <br>
+                <div>
+                    <p>Login</p>
+                </div>
+            </div>
+            <label for="inputLoginUsername" class="form-label">Username</label>
+            <input type="text" min="5" id="inputLoginUsername" class="form-control"
+                   aria-describedby="passwordHelpBlock">
+            <br>
+            <label for="inputLoginPassword" class="form-label">Password</label>
+            <input type="password" id="inputLoginPassword" class="form-control" aria-describedby="passwordHelpBlock">
+            <br>
+            <button onclick="login();" type="button" class="btn btn-dark">Start communication!</button>
+            <br><br>
+            <a href="#" onclick="hiddenLoginForm();">Registration</a>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+</div>
+
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+
+    <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+         aria-atomic="true">
+        <div class="d-flex">
+            <div id="toastBody" class="toast-body">
+                Connected!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function hiddenLoginForm() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("registrationForm").style.display = "flex";
+    }
+
+    function hiddenRegistrationForm() {
+        document.getElementById("loginForm").style.display = "flex";
+        document.getElementById("registrationForm").style.display = "none";
+    }
+
+    async function register() {
+        let username = document.getElementById("inputUsername").value;
+        let password = document.getElementById("inputPassword").value;
+
+        let response = await fetch("/api/v1/users/auth/register", {
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify({
+                "password": password,
+                "username": username
+            })
+        });
+        let status = response.status;
+        let result = await response.json();
+
+        const toastLiveExample = document.getElementById("liveToast")
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+
+        if (status === 200) {
+            document.getElementById("toastBody").innerHTML = "Connected!";
+            localStorage.setItem("access_token", result["access_token"]);
+            toastBootstrap.show()
+
+            setTimeout(() => {
+                location.href = "/";
+            }, "2000");
+        } else {
+            document.getElementById("toastBody").innerHTML = result["detail"];
+            toastBootstrap.show()
+        }
+    }
+
+    async function login() {
+        let username = document.getElementById("inputLoginUsername").value;
+        let password = document.getElementById("inputLoginPassword").value;
+
+        let response = await fetch("/api/v1/users/auth/login", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "password": password,
+                "username": username
+            })
+        });
+        let status = response.status;
+        let result = await response.json();
+
+        const toastLiveExample = document.getElementById("liveToast")
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+
+        if (status === 200) {
+            document.getElementById("toastBody").innerHTML = 'Connected!';
+            localStorage.setItem("access_token", result["access_token"]);
+            toastBootstrap.show()
+
+            setTimeout(() => {
+                location.href = "/";
+            }, "2000");
+        } else {
+            document.getElementById("toastBody").innerHTML = result["detail"];
+            toastBootstrap.show()
+        }
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
