@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WorldConnect</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem; position: fixed; height: 100%;">
+    <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip"
+       data-bs-placement="right" data-bs-original-title="Icon-only">
+        <svg style="margin: 0 10px 0 10px" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             fill="currentColor"
+             class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+        </svg>
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+            <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page"
+               data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-chat-fill" viewBox="0 0 16 16">
+                    <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+                </svg>
+            </a>
+            <a href="#" class="nav-link py-3 border-bottom rounded-0" aria-current="page"
+               data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Search" data-bs-original-title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                     viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <div class="dropdown border-top">
+        <a href="#"
+           class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle"
+           data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container"
+     style="padding: 50px; display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div class="row" id="registrationForm">
+        <div class="col-xs">
+            <img src="/static/images/chat.jpg" alt="">
+        </div>
+        <div class="col-sm col-xs">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+                <div style="margin-bottom: 50px;">
+                    <b>World</b>
+                    <svg style="margin: 0 10px 0 10px" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                         fill="currentColor"
+                         class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
+                        <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+                    </svg>
+                    <b>Connect</b>
+                </div>
+                <div class="chat d-flex flex-row">
+                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+                         style="width: 380px;">
+                        <div style="height: 60px; border-bottom: 1px solid gray;"
+                             class="d-flex justify-content-center align-items-center">
+                            <b>Programming</b>
+                        </div>
+                        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                            <div style="width: 100%;">
+                                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                                   aria-current="true">
+                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                                         class="rounded-circle flex-shrink-0">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0">User</h6>
+                                            <p class="mb-0 opacity-75">Hello!</p>
+                                        </div>
+                                        <small class="opacity-50 text-nowrap">20:19</small>
+                                    </div>
+                                </a>
+                                <div class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                                   aria-current="true">
+                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                                         class="rounded-circle flex-shrink-0">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0">Admin</h6>
+                                            <p class="mb-0 opacity-75">Hello there.</p>
+                                        </div>
+                                        <small class="opacity-50 text-nowrap">20:24</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                                   aria-current="true">
+                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                                         class="rounded-circle flex-shrink-0">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0">Admin</h6>
+                                            <p class="mb-0 opacity-75">Hello there.</p>
+                                        </div>
+                                        <small class="opacity-50 text-nowrap">20:24</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                                   aria-current="true">
+                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                                         class="rounded-circle flex-shrink-0">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0">Admin</h6>
+                                            <p class="mb-0 opacity-75">Hello there.</p>
+                                        </div>
+                                        <small class="opacity-50 text-nowrap">20:24</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                                   aria-current="true">
+                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                                         class="rounded-circle flex-shrink-0">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0">Admin</h6>
+                                            <p class="mb-0 opacity-75">Hello there.</p>
+                                        </div>
+                                        <small class="opacity-50 text-nowrap">20:24</small>
+                                    </div>
+                                </div>
+                                <div class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                                   aria-current="true">
+                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
+                                         class="rounded-circle flex-shrink-0">
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0">Admin</h6>
+                                            <p class="mb-0 opacity-75">Hello there.</p>
+                                        </div>
+                                        <small class="opacity-50 text-nowrap">20:24</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+                         style="width: 380px;">
+                        <a href="/"
+                           class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+                            <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                 fill="currentColor"
+                                 class="bi bi-award-fill" viewBox="0 0 16 16">
+                                <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                            </svg>
+                            <span class="fs-5 fw-semibold">Topics</span>
+                        </a>
+                        <div class="list-group list-group-flush border-bottom scrollarea">
+                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
+                               aria-current="true">
+                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <strong class="mb-1">Games</strong>
+                                    <small>Wed</small>
+                                </div>
+                                <div class="col-10 mb-1 small">Description
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm"
+                               aria-current="true">
+                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <strong class="mb-1">Programming</strong>
+                                    <small>Wed</small>
+                                </div>
+                                <div class="col-10 mb-1 small">Description
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
+                               aria-current="true">
+                                <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <strong class="mb-1">Life</strong>
+                                    <small>Wed</small>
+                                </div>
+                                <div class="col-10 mb-1 small">Description
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs">
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
