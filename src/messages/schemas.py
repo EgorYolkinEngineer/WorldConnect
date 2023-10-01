@@ -6,5 +6,6 @@ class Message(BaseModel):
     topic_id: int
 
 
-class ResponseMessage(BaseModel):
-    ...
+class Topic(BaseModel):
+    name: str
+    description: str = "Don't description"

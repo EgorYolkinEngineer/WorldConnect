@@ -17,6 +17,8 @@ class Message(sqlalchemy_base, SqlalchemyTableMixin, SqlalchemySerializerMixin):
 class Topic(sqlalchemy_base, SqlalchemyTableMixin, SqlalchemySerializerMixin):
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    description = Column(String)
+    creator_id = Column(Integer)
 
 
 sqlalchemy_base.metadata.create_all(engine)

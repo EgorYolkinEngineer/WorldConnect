@@ -30,22 +30,28 @@
 
 <div class="container"
      style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-    <div class="row" id="registrationForm">
+    <div class="row">
         <div class="col-xs">
             <img src="/static/images/chat.jpg" alt="">
         </div>
-        <div class="col-sm col-xs">
+        <div class="col-sm col-xs" >
             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-                <div class="chat d-flex flex-row">
+                <div class="chat d-flex flex-row" >
                     <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
-                         style="width: 380px; border-right: 1px solid gray;">
-                        <div style="height: 60px; background: rgb(50, 50, 50); color: white;"
+                         style="max-width: 380px; border-radius: 15px 0 0 15px;">
+                        <div style="height: 80px;"
                              class="d-flex justify-content-center align-items-center">
-                            <b>Programming</b>
+                            <button type="button" class="btn btn-primary position-relative">
+                              Programming
+                              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                 434k
+                                <span class="visually-hidden">unread messages</span>
+                              </span>
+                            </button>
                         </div>
                         <div style="overflow-y: scroll; max-height: 500px;"
                              class="d-flex flex-column align-items-center justify-content-center">
-                            <div style="width: 100%; margin-top: 100px; padding: 10px;">
+                            <div style="width: 100%; padding: 10px;">
                                 <div class="d-flex gap-3 py-3">
                                     <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
                                          class="rounded-circle flex-shrink-0">
@@ -57,6 +63,7 @@
                                         <small class="opacity-50 text-nowrap">20:19</small>
                                     </div>
                                 </div>
+                                {% for _ in "rfweiuh23weiucrhwirh" %}
                                 <div class="d-flex gap-3 py-3">
                                     <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
                                          class="rounded-circle flex-shrink-0">
@@ -68,95 +75,7 @@
                                         <small class="opacity-50 text-nowrap">20:19</small>
                                     </div>
                                 </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex gap-3 py-3">
-                                    <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32"
-                                         class="rounded-circle flex-shrink-0">
-                                    <div class="d-flex gap-2 w-100 justify-content-between">
-                                        <div>
-                                            <h6 class="mb-0">User</h6>
-                                            <p class="mb-0 opacity-75">Hello!</p>
-                                        </div>
-                                        <small class="opacity-50 text-nowrap">20:19</small>
-                                    </div>
-                                </div>
-
+                                {% endfor %}
                             </div>
                         </div>
                         <div style="padding: 10px;">
@@ -167,10 +86,9 @@
                             </form>
                         </div>
                     </div>
-                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
-                         style="width: 380px;">
-                        <a href="#search"
-                           class="d-flex flex-column align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+                    <div style="border-radius: 0 15px 15px 0;" class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary">
+                        <div
+                                class="d-flex flex-column align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none">
                             <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                  fill="currentColor"
                                  class="bi bi-award-fill" viewBox="0 0 16 16">
@@ -185,66 +103,56 @@
                                     <button class="btn btn-outline-success" type="submit">Search</button>
                                 </form>
                             </div>
-                        </a>
-
-                        <div class="list-group list-group-flush border-bottom scrollarea"
-                             style="overflow-y: scroll; max-height: 68%;">
-                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
-                               aria-current="true">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <strong class="mb-1">Games</strong>
-                                    <small>Wed</small>
-                                </div>
-                                <div class="col-10 mb-1 small">Description
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm"
-                               aria-current="true">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <strong class="mb-1">Programming</strong>
-                                    <small>Wed</small>
-                                </div>
-                                <div class="col-10 mb-1 small">Description
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
-                               aria-current="true">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <strong class="mb-1">Life</strong>
-                                    <small>Wed</small>
-                                </div>
-                                <div class="col-10 mb-1 small">Description
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
-                               aria-current="true">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <strong class="mb-1">Games</strong>
-                                    <small>Wed</small>
-                                </div>
-                                <div class="col-10 mb-1 small">Description
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
-                               aria-current="true">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <strong class="mb-1">Programming</strong>
-                                    <small>Wed</small>
-                                </div>
-                                <div class="col-10 mb-1 small">Description
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm"
-                               aria-current="true">
-                                <div class="d-flex w-100 align-items-center justify-content-between">
-                                    <strong class="mb-1">Life</strong>
-                                    <small>Wed</small>
-                                </div>
-                                <div class="col-10 mb-1 small">Description
-                                </div>
-                            </a>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center" style="height: 50%;">
+
+                        <ul class="d-flex flex-column list-group" style="padding: 15px; overflow-y: scroll; max-height: 300px;">
+                            <li class="list-group-item d-flex justify-content-between align-items-top active">
+                                <div style="max-width: 150px;">
+                                    <b>Programming topic</b>
+                                    <p>Code wars ⚔️</p>
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary rounded-pill">434k messages</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-top">
+                                <div style="max-width: 150px;">
+                                    <b>Blog 1 topic</b>
+                                    <p>This is my personal blog. Have...</p>
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary rounded-pill">4 messages</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-top">
+                                <div style="max-width: 150px;">
+                                    <b>Blog 1 topic</b>
+                                    <p>This is my personal blog. Have...</p>
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary rounded-pill">4 messages</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-top">
+                                <div style="max-width: 150px;">
+                                    <b>Blog 1 topic</b>
+                                    <p>This is my personal blog. Have...</p>
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary rounded-pill">4 messages</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-top">
+                                <div style="max-width: 150px;">
+                                    <b>Lifehacks topic</b>
+                                    <p>Hack your life 👾</p>
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary rounded-pill">1.4k messages</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center justify-content-center" style="height: 200px;">
                             <button type="button" class="btn btn-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -259,9 +167,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs">
-        </div>
     </div>
+    <div class="col-xs">
+    </div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
