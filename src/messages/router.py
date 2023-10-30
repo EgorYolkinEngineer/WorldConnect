@@ -7,18 +7,27 @@ from messages import service
 router = APIRouter()
 
 
-@router.post("/send/")
+@router.post("/send")
 async def send(message: schemas.Message, user: User = Depends(user_depends.validate_authorization)):
     return service.create_message(message, user)
 
 
-@router.post("/delete/")
+@router.post("/delete")
 async def delete(message_id: int, user: User = Depends(user_depends.validate_authorization)):
     return service.delete_message(message_id, user)
 
 
-@router.post("/chat/history/",
-             description="Get chat history with offset && limit")
-async def send(offset: int = 0, limit: int = 50,
-               user: User = Depends(user_depends.validate_authorization)):
-    return service.get_chat_history(offset, limit)
+@router.post('/topics/create')
+async def topics_create(topic: schemas.Topic, user: User = Depends(user_depends.validate_authorization)):
+    return service.topic_create(topic, user)
+
+
+@router.post("/topics/{topic_id}/history")
+async def topic_history(topic_id: int, offset: int = 0, limit: int = 50,
+                        user: User = Depends(user_depends.validate_authorization)):
+    return service.get_topic_history(topic_id, offset, limit)
+
+
+@router.get('/topics/list')
+async def topics_list(q: str = None, offset: int = 0, limit: int = 50):
+    return service.get_topics_list(q, offset, limit)
